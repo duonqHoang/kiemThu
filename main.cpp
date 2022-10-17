@@ -19,14 +19,16 @@ float bmi(float weight, float height) {
 
 //Category of BMI
 string bmi_category(float bmi) {
-    if (bmi < 0) return "Invalid"; 
-    if (bmi < 18.5) {
+    if (bmi < 0) {
+        return "Invalid";
+    }
+    if (bmi < 18.5) { 
         return "Underweight";
     } else if (bmi < 25.0) {
         return "Normal";
     } else if (bmi < 30.0) {
         return "Overweight";
-    } else {
+    } else{
         return "Obese";
     }
 }
@@ -53,6 +55,13 @@ int main(){
     assert(bmi_category(20) == "Normal");
     assert(bmi_category(27) == "Overweight");
     assert(bmi_category(50) == "Obese");
+
+    //Kiem thu hop trang, phu cap 2
+    assert(bmi_category(bmi(-1, 2)) == "Invalid");
+    assert(bmi_category(bmi(45, 1.8)) == "Underweight");
+    assert(bmi_category(bmi(60, 1.7)) == "Normal");
+    assert(bmi_category(bmi(70, 1.6)) == "Overweight");
+    assert(bmi_category(bmi(100, 1.6)) == "Obese");
 
     //Program
     float weight, height;
