@@ -56,12 +56,16 @@ int main(){
     assert(bmi_category(27) == "Overweight");
     assert(bmi_category(50) == "Obese");
 
-    //Kiem thu hop trang, phu cap 2
+    //Kiem thu hop trang, control flow phu cap 2
     assert(bmi_category(bmi(-1, 2)) == "Invalid");
     assert(bmi_category(bmi(45, 1.8)) == "Underweight");
     assert(bmi_category(bmi(60, 1.7)) == "Normal");
     assert(bmi_category(bmi(70, 1.6)) == "Overweight");
     assert(bmi_category(bmi(100, 1.6)) == "Obese");
+
+    //Kiem thu hop trang, data flow all-c-some-p
+    assert(bmi_category(bmi(45, 1.8)) == "Underweight");
+    assert(bmi_category(bmi(-1, 2)) == "Invalid");
 
     //Program
     float weight, height;
